@@ -1,0 +1,11 @@
+{
+  "name": "classificationapp",
+  "version": "1.0.0",
+  "description": "web application to classify and modify data",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Michelle Fourie",
+  "license": "MIT"
+}
