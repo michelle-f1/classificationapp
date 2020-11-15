@@ -1,5 +1,5 @@
 <template>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <router-link class="navbar-brand" to="/">Data Classification</router-link>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -18,21 +18,25 @@
             About
         </router-link>
         </li>
+
         <!--Login-->
         <li class="nav-item">
         <router-link to="/login" class="nav-link">Login</router-link>
         </li>
+
+        <!--Profile-->
+        <li class="nav-item">
+        <router-link to="/profile" class="nav-link">User Profile</router-link>
+        </li>
+
          <!--Register-->
         <li class="nav-item">
         <router-link to="/register" class="nav-link">Register</router-link>
-      </li>
-        <!--Profile-->
-        <li class="nav-item">
-        <router-link to="/profile" class="nav-link">Profile</router-link>
-      </li>
+        </li>
+        
       <!--Logout-->
         <li class="nav-item">
-        <a to="/logout" class="nav-link">Logout</a>
+        <a to="/logout" class="nav-link">Logoff</a>
       </li>
     </ul>
     
