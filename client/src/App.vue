@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <Navbar/>
+    <Navbar />
     <div class="container">
-    <router-view/>
+      <router-view />
     </div>
   </div>
 </template>
@@ -10,10 +10,8 @@
 import Navbar from "@/components/Navbar";
 export default {
   components: {
-    Navbar
-  }
+    Navbar,
+  },
 };
 </script>
-<style>
-
-</style>
+<style></style>

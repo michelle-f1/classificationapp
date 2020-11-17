@@ -1,14 +1,11 @@
-import { createStore } from 'vuex'
-import Auth from '../Warehouse/Auth'
+import { createStore } from "vuex";
+import Auth from "../Warehouse/Auth";
 
 export default createStore({
   modules: {
-    Auth
+    Auth,
   },
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  }
-})
+  state: {},
+  mutations: {},
+  actions: {},
+});
