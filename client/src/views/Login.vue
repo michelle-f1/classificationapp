@@ -1,10 +1,11 @@
 <template>
   <div>
-    <h2>Login</h2>
+    
     <div class="row">
       <div class="card mx-auto">
         <div class="card-header text-white bg-dark">
-          <h4>Login</h4>
+            
+          <h4><img src="../assets/client-login-icon-4.gif" width="90" height="80" >Login</h4>
         </div>
         <div class="card-body">
           <form @submit.prevent="loginUser">
@@ -94,4 +95,5 @@ export default {
 .router_link {
   display: flex;
 }
+
 </style>

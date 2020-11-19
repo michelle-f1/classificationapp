@@ -4,10 +4,10 @@
     <div class="row">
       <div class="card mx-auto">
         <div class="card-header text-white bg-dark">
-          <h4><img src="../assets/gif-final.gif" width="80" height="60" > Registration</h4>
+          <h4><img src="../assets/gif-final.gif" width="80" height="60" > Edit User Profile</h4>
         </div>
         <div class="card-body">
-          <form @submit.prevent="registerUser">
+          <form @submit.prevent="updateUser">
             <!--Username-->
             <div class="form-group">
               <label for="username">Enter Username</label>
@@ -68,10 +68,10 @@
                 v-model="confirm_password"
               />
             </div>
-            <button class="btn btn-primary">Complete Registration</button>
+            <button class="btn btn-primary">Update</button>
             &nbsp;&nbsp;&nbsp;&nbsp;
             <router-link to="/login" class="card-link"
-              >Already have an existing account?</router-link
+              >Return to Login page</router-link
             >
           </form>
         </div>
@@ -93,8 +93,8 @@ export default {
     };
   },
   methods:{
-    ...mapActions(['register']),
-    registerUser() {
+    ...mapActions(['update']),
+    updateUser() {
       let user = {
         username: this.username,
         password: this.password,
@@ -102,7 +102,7 @@ export default {
         name: this.name,
         email: this.email
       }
-      this.register(user).then(res => {
+      this.update(user).then(res => {
         if(res.data.success){
           this.$router.push('login'); //sending user to the login page
         }

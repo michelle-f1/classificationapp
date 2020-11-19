@@ -6,6 +6,9 @@ const jwt = require("jsonwebtoken");
 const key = require("../../config/keys").secret;
 const passport = require("passport"); //used to predict routes
 const User = require("../../model/User");
+//for profile update use mongo id
+const ObjectID = require('mongodb').ObjectID;
+
 /**
  * @route POST api/users/register
  * @desc Register the user
@@ -125,5 +128,31 @@ router.get(
     });
   }
 );
+
+/**
+ * @route POST api/users/edit
+ * @desc edit user data
+ * @access Private
+ */
+router.post('/edit', (req, res, next) => {
+  User.findOne({ username: req.body.username }).then((user) => {
+    if (!user) {
+      return res.status(404).json({
+        msg: "Username entered not found",
+        success: false
+      });
+    }else {
+      const users = req.app.locals.users;
+      const _id = ObjectID(req.session.passport.user);
+      users.updateOne({_id}, {$set: {name, username, email, password}}, (err)=> {
+        if (err){
+          throw err;
+        }
+        res.redirect('/profile');
+      });
+    }
+  });
+
+});
 
 module.exports = router;

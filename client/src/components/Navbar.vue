@@ -35,14 +35,25 @@
           <router-link to="/profile" class="nav-link">User Profile</router-link>
         </li>
 
+        <!--Edit Profile-->
+        <li class="nav-item" v-if="isLoggedIn">
+          <router-link to="/edit" class="nav-link">Edit Profile</router-link>
+        </li>
+
+        <!--Upload File-->
+        <li class="nav-item" v-if="isLoggedIn">
+          <router-link to="/uploadfiles" class="nav-link">Upload File</router-link>
+        </li>
+
         <!--Register-->
         <li class="nav-item" v-if="!isLoggedIn">
           <router-link to="/register" class="nav-link">Register</router-link>
         </li>
+        
 
         <!--Logout-->
         <li class="nav-item" v-if="isLoggedIn">
-          <a to="/logout" class="nav-link">Logoff</a>
+          <a to="/logout" class="nav-link" @click.prevent= "logoutUser">Logout</a>
         </li>
       </ul>
     </div>
@@ -50,11 +61,17 @@
 </template>
 
 <script>
-import { mapGetters } from "vuex";
+import { mapGetters, mapActions } from "vuex";
 export default {
   computed: {
     ...mapGetters(["isLoggedIn"]),
   },
+  methods: {
+    ...mapActions(["logout"]),
+    logoutUser(){
+      this.logout();
+    }
+  }
 };
 </script>
 
