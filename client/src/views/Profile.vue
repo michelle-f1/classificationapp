@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2><img src="../assets/team.gif" width="90" height="80" >User Profile Overview</h2>
-    <div class="container">
+    <div class="card" v-if="user">
       <ul class="list-group">
         <li class="list-group-item">Username:{{user.username}}</li>
         <li class="list-group-item">Name:{{user.name}}</li>
@@ -16,13 +16,13 @@
        <router-link to="/edit" class="nav-link">Edit Profile</router-link>
        <router-link to="/uploadfiles" class="nav-link">Upload File</router-link>
     </div>
-    <h4>...you will be re-routed to the selected page</h4>
+    
   </div>
 </template>
 
 <script>
 import { mapGetters, mapActions} from 'vuex';
-import UploadFiles from "../components/UploadFiles";
+//import UploadFiles from "../components/UploadFiles";
 
 export default {
   computed: mapGetters(['user']),
@@ -32,10 +32,10 @@ export default {
   created() {
     this.getProfile();
   },
-  name:"App",
-  components:{
-    UploadFiles
-  }
+  //name:"App",
+  //components:{
+    //UploadFiles
+  //}
 };
 </script>
 
@@ -43,5 +43,12 @@ export default {
 .container{
   padding: 20px;
   border-block: 2px;
+}
+.card{
+  width: 80%;
+  border-radius: 0px;
+}
+.h3{
+  font-size: 20px;
 }
 </style>

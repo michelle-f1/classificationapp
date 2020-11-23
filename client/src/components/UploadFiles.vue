@@ -40,7 +40,7 @@
  </div>   
     
 </template>
-<script src></script>
+
 <script>
     import UploadService from "../services/UploadFilesService";
 
